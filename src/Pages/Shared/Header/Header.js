@@ -3,14 +3,20 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
+import { FaApple } from 'react-icons/fa';
 
 const Header = () => {
   return (
-    <div>
-      <Navbar collapseOnSelect expand='lg' bg='light' variant='light'>
+    <div className='mb-4'>
+      <Navbar collapseOnSelect expand='lg' bg='warning' variant='light'>
         <Container>
           <Navbar.Brand href='/'>
-            <h4>SpaceX Skills</h4>
+            <div className='d-flex align-center '>
+              <p className='me-2'>
+                <FaApple></FaApple>
+              </p>
+              <h4>SpaceX Skills</h4>
+            </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
