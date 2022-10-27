@@ -13,7 +13,8 @@ const Main = () => {
           <Col lg='2'>
             <LeftSideNav></LeftSideNav>
           </Col>
-          <Col lg='10'>
+          <Col lg='1'></Col>
+          <Col lg='9'>
             <Outlet></Outlet>
           </Col>
         </Row>
