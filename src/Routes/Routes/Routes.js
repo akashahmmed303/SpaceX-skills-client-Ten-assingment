@@ -17,7 +17,7 @@ export const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/faqs'),
+        loader: () => fetch('https://space-x-skills-server.vercel.app/faqs'),
       },
       {
         path: '/courses/:id',
@@ -27,7 +27,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/course/${params.id}`),
+          fetch(`https://space-x-skills-server.vercel.app/${params.id}`),
       },
       {
         path: '/faq/:id',
@@ -37,7 +37,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/faqs/${params.id}`),
+          fetch(`https://space-x-skills-server.vercel.app/faqs/${params.id}`),
       },
       {
         path: '/blog',
