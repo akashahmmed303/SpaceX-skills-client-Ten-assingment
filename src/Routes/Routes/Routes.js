@@ -27,7 +27,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://space-x-skills-server.vercel.app/course/${params.id}`),
+          fetch(`https://space-x-skills-server.vercel.app/${params.id}`),
       },
       {
         path: '/faq/:id',
