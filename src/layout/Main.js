@@ -20,8 +20,6 @@ const Main = () => {
           </Col>
         </Row>
       </Container>
-      <hr></hr>
-
       <Footer></Footer>
     </div>
   );
