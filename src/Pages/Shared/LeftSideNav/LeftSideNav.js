@@ -8,14 +8,14 @@ const LeftSideNav = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/faq-courses')
+    fetch('http://localhost:5000/faqs-courses')
       .then(res => res.json())
       .then(data => setCourses(data));
   }, []);
 
   return (
     <div>
-      <h4>All Courses List : {courses.length}</h4>
+      <h4>All Courses List</h4>
       <div className='courses-list'>
         <ListGroup>
           <ListGroup.Item>

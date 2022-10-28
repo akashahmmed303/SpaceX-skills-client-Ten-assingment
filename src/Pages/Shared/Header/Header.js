@@ -4,13 +4,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
 import { FaApple } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className='mb-4'>
       <Navbar collapseOnSelect expand='lg' bg='warning' variant='light'>
         <Container>
-          <Navbar.Brand href='/'>
+          <Navbar.Brand>
             <div className='d-flex align-center '>
               <p className='me-2'>
                 <FaApple></FaApple>
@@ -21,7 +22,10 @@ const Header = () => {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
-              <Nav.Link href='#courses'> Courses</Nav.Link>
+              <Nav.Link>
+                {' '}
+                <Link to='/'>Courses</Link>
+              </Nav.Link>
               <Nav.Link href='#blog'> Blog</Nav.Link>
               <Nav.Link href='#faq'> FAQ</Nav.Link>
               <Nav.Link href='#darkmode'> DarkTheme</Nav.Link>
