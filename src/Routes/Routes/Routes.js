@@ -23,7 +23,8 @@ export const routes = createBrowserRouter([
       {
         path: '/faq/:id',
         element: <FAQ></FAQ>,
-        loader: ({ params }) => fetch(`http://localhost:5000/faq/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/faqs/${params.id}`),
       },
     ],
   },
