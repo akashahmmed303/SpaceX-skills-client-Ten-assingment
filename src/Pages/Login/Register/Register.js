@@ -5,8 +5,10 @@ import { ButtonGroup } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { useState } from 'react';
 
 const Register = () => {
+  const [error, setError] = useState('');
   const { createUser } = useContext(AuthContext);
 
   const handleSubmit = event => {
@@ -22,9 +24,13 @@ const Register = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        setError('');
         form.reset();
       })
-      .catch(error => console.error(error));
+      .catch(error => {
+        console.error(error);
+        setError(error.message);
+      });
   };
 
   const { providerLogin } = useContext(AuthContext);
@@ -51,7 +57,7 @@ const Register = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form className='w-50' onSubmit={handleSubmit}>
       <Form.Group className='mb-3' controlId='formBasicEmail'>
         <Form.Label>Full Name</Form.Label>
         <Form.Control name='name' type='text' placeholder='Your Name' />
@@ -80,12 +86,13 @@ const Register = () => {
         />
       </Form.Group>
 
-      <Button className='me-3' variant='primary' type='submit'>
+      <Button className='mb-3' variant='primary' type='submit'>
         Register
       </Button>
-      <ButtonGroup className='ms-3'>
+      <Form.Text className='text-danger '>{error}</Form.Text>
+      <ButtonGroup className='my-2'>
         <Button
-          className='me-3'
+          className='me-5'
           onClick={handleGoogleSignIn}
           variant='outline-primary'
         >
@@ -99,9 +106,6 @@ const Register = () => {
           <FaGithub></FaGithub> Login withGitHub
         </Button>
       </ButtonGroup>
-      <Form.Text className='text-danger '>
-        We'll never share your email with anyone else.
-      </Form.Text>
     </Form>
   );
 };
