@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -17,6 +17,10 @@ const FAQ = () => {
         <a href={image_url} download='pdf'>
           <Button variant='primary'>Download</Button>
         </a>
+
+        <Link className='ms-4' to='*'>
+          Get premium access
+        </Link>
       </Card.Body>
     </Card>
   );

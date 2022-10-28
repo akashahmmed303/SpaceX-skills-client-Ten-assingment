@@ -24,9 +24,9 @@ const Header = () => {
         <Container>
           <Navbar.Brand>
             <div className='d-flex align-center '>
-              <FaApple className='me-2 mt-1'></FaApple>
+              <FaApple className='me-2 mt-2'></FaApple>
 
-              <h4>SpaceX Skills</h4>
+              <h3>SpaceX Skills</h3>
             </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
@@ -46,7 +46,7 @@ const Header = () => {
               <Nav.Link href='#deets'>
                 {user?.uid ? (
                   <>
-                    <span>{user?.displayName}</span>
+                    <span className='me-3'>{user?.displayName}</span>
 
                     <Button variant='outline-primary' onClick={handleLogOut}>
                       Log Out
