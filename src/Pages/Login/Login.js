@@ -5,13 +5,16 @@ import { ButtonGroup } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const Login = () => {
   const [error, setError] = useState('');
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -26,7 +29,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError('');
-        navigate('/');
+        navigate(from, { replace: true });
       })
       .catch(error => {
         console.error(error);

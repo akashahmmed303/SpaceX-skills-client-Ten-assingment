@@ -1,10 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../../layout/Main';
+import Blog from '../../Pages/Blog/Blog';
 import Courses from '../../Pages/Courses/Courses/Courses';
 import FAQ from '../../Pages/FAQ/FAQ/FAQ';
 import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login';
 import Register from '../../Pages/Login/Register/Register';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 export const routes = createBrowserRouter([
   {
@@ -24,9 +26,17 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/faq/:id',
-        element: <FAQ></FAQ>,
+        element: (
+          <PrivateRoute>
+            <FAQ></FAQ>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/faqs/${params.id}`),
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>,
       },
       {
         path: '/login',
