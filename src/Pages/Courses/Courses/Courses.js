@@ -6,7 +6,7 @@ const Courses = () => {
   const categoryData = useLoaderData();
   return (
     <div>
-      <h2>Courses : {categoryData.length}</h2>
+      <h2>Course Details</h2>
       {categoryData.map(data => (
         <CourseSummaryCart key={data._id} data={data}></CourseSummaryCart>
       ))}
