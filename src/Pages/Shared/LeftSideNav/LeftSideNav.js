@@ -15,7 +15,7 @@ const LeftSideNav = () => {
 
   return (
     <div>
-      <h4>All Courses List</h4>
+      <h4>Courses List</h4>
       <div className='courses-list'>
         <ListGroup>
           <ListGroup.Item>

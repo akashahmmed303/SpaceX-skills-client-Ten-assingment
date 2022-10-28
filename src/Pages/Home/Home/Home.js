@@ -9,7 +9,7 @@ const Home = () => {
   const allData = useLoaderData();
   return (
     <div>
-      <h2>This is Home Component : {allData.length}</h2>
+      <h2>All Courses Details</h2>
 
       {allData.map(data => (
         <CourseSummaryCart key={data._id} data={data}></CourseSummaryCart>

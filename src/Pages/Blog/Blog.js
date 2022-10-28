@@ -43,11 +43,11 @@ const Blog = () => {
           ) if the user is logged in. If not logged in the user is redirected to
           the /login page with the return url passed in the location state
           property. <br />
-          <br /> Select the Start button, then type settings. Select Settings >
-          Network & internet > Wi-Fi. On the Wi-Fi settings screen, select
-          Manage known networks, and then select the Wi-Fi network you want to
-          change. On the Wi-Fi network screen, under Network profile type,
-          select Public (Recommended) or Private.
+          <br /> Select the Start button, then type settings. Select Settings
+          Network & internet Wi-Fi. On the Wi-Fi settings screen, select Manage
+          known networks, and then select the Wi-Fi network you want to change.
+          On the Wi-Fi network screen, under Network profile type, select Public
+          (Recommended) or Private.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey='3'>

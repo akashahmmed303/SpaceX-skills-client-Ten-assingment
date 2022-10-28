@@ -39,10 +39,8 @@ const Header = () => {
                 <Link to='/blog'>Blog</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to='/faq'>FAQ</Link>
+                <Link to='/faqs/0282e0e58a5c404fbd15261f11c2ab6a'>FAQ</Link>
               </Nav.Link>
-
-              <Nav.Link href='#darkmode'> DarkTheme</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href='#deets'>
